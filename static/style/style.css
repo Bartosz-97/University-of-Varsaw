@@ -1,0 +1,169 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Muli', sans-serif;
+}
+
+:root {
+  --navHeight: 12vh;
+  --burgerHeight: 35px;
+  --burgerWidth: 40px
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  align-items: center;
+  top: 0;
+  left: 0;
+  height: var(--navHeight);
+  width: 100%;
+}
+
+nav .burger {
+  position: relative;
+  left: 20px;
+  width: var(--burgerWidth);
+  height: var(--burgerHeight);
+  cursor: pointer;
+  z-index: 1;
+
+  transition: .3s linear;
+}
+
+.burger span {
+  position: absolute;
+  width: 100%;
+  height: 5px;
+  background-color: #FFF;
+  border-radius: 20%;
+  transition: top .3s, opacity .3s, transform .3s .4s linear;
+
+}
+
+.burger span:nth-child(1){
+  top: 0;
+  left: 0;
+}
+
+.burger span:nth-child(2){
+  top: calc(50% - 2.5px);
+}
+
+.burger span:nth-child(3){
+  bottom: 0;
+}
+
+/*Animacja burgera*/
+
+.burger.change {
+  left: 80px;
+	transform: rotate(90deg);
+	transition: left .3s, transform .3s .3s linear;
+}
+
+.burger.change span:nth-child(1) {
+	transform: rotate(-45deg);
+	top: calc(50% - 5px);
+}
+
+.burger.change span:nth-child(2) {
+	opacity: 0;
+}
+
+.burger.change span:nth-child(3) {
+	transform: rotate(45deg);
+	top: calc(50% - 5px);
+}
+
+/* Menu */
+aside {
+  position: fixed;
+  top: 0;
+  left: -200px;
+  bottom: 0;
+  width: 200px;
+  background-color: #000;
+  transition: .3s;
+}
+
+.burger.active + aside {
+  left: 0;
+}
+
+aside ul.menu {
+  list-style-type: none;
+  margin-top: var(--navHeight);
+  text-align: center;
+}
+
+aside ul.menu li a {
+  display: block;
+  color: #FFF;
+  text-decoration: none;
+  font-size: 20px;
+  line-height: calc(88vh / 5);
+  transition: .4s;
+}
+
+aside ul.menu li:hover a {
+  background-color: #DDD;
+  color: #000;
+  font-size: 27px;
+}
+
+.logo {
+  width: 125px;
+  height: 10vh;
+  margin-right: 10px;
+}
+
+.logo img {
+  width: 100%;
+}
+
+/* BANNER */
+.banner {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  min-width: 100vw;
+  width: 100%;
+  min-height: 100vh;
+  max-height: 100vh;
+  background-image: url(../image/tlo.jpg);
+  background-position: center;
+  background-size: cover;
+  background-blend-mode: darken;
+  background-color: rgb(0, 0 ,0 , 0.3);
+  z-index: -2;
+}
+
+header {
+  position: absolute;
+  bottom: 15%;
+  left: 0;
+}
+
+header h1 {
+  color: #FFF;
+  font-weight: 100;
+  font-size: 40px;
+  margin-left: 20px;
+}
+
+header h1.slider-blue {
+  color: aqua;
+}
+
+header .fas {
+  margin: 15px 10px 0;
+  font-size: 30px;
+  color: #FFCC66;
+}
+
+header .fa-arrow-left {
+  margin-left: 20px;
+}
