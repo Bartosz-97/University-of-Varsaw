@@ -3,7 +3,7 @@ const spanBurger = [...document.querySelectorAll('nav .burger span')];
 
 
 window.addEventListener('scroll', function() {
-  if (window.scrollY > 520) {
+  if (window.scrollY > 580) {
     logo.classList.add('hidden-logo');
   } else {
     logo.classList.remove('hidden-logo');
@@ -11,9 +11,9 @@ window.addEventListener('scroll', function() {
 })
 
 window.addEventListener('scroll', function() {
-  if (window.scrollY > 520) {
+  if (window.scrollY > 620) {
     spanBurger.forEach((span) => {
-      span.style.backgroundColor = '#000';
+      span.style.backgroundColor = 'red';
     })
   } else
   spanBurger.forEach((span) => {
