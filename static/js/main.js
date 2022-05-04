@@ -45,7 +45,6 @@ const manualSlideLeft = () => {
   if (arrow) {
     clearInterval(indexInterval);
     active --;
-    console.log(active);
     if (active < 0) {
       active = slideList.length -1;
     }
@@ -58,10 +57,8 @@ const manualSlideRight = () => {
   if (arrow) {
     clearInterval(indexInterval);
     active ++;
-    console.log(active);
     if (active === slideList.length) {
       active = 0;
-      console.log('jestem');
     }
   }
   h1.textContent = slideList[active].text1;
