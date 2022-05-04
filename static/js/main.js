@@ -21,7 +21,7 @@ const slideList = [{
 let active = 0;
 const time = 5000;
 
-let arrowL = true;
+let arrow = true;
 
 const burgerActive = () => {
   burger.classList.toggle('change');
@@ -41,19 +41,32 @@ const changeSlide = () => {
 }
 let indexInterval = setInterval(changeSlide, time);
 
-const manualSlide = () => {
-  if (arrowL) {
+const manualSlideLeft = () => {
+  if (arrow) {
     clearInterval(indexInterval);
     active --;
-    if (active === slideList.length) {
-      active = 0;
-    } else if (active < 0) {
+    console.log(active);
+    if (active < 0) {
       active = slideList.length -1;
     }
-  } 
+  }
   h1.textContent = slideList[active].text1;
   blueH1.textContent = slideList[active].text2;
 }
 
-leftArrow.addEventListener('click', manualSlide);
-rightArrow.addEventListener('click', manualSlide);
+const manualSlideRight = () => {
+  if (arrow) {
+    clearInterval(indexInterval);
+    active ++;
+    console.log(active);
+    if (active === slideList.length) {
+      active = 0;
+      console.log('jestem');
+    }
+  }
+  h1.textContent = slideList[active].text1;
+  blueH1.textContent = slideList[active].text2;
+}
+
+leftArrow.addEventListener('click', manualSlideLeft);
+rightArrow.addEventListener('click', manualSlideRight);
