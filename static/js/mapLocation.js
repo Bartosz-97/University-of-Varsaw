@@ -9,7 +9,6 @@ function initMap() {
   const marker = new google.maps.Marker({
     position: myLocation,
     map: map,
-    icon: "/home/bartosz/Desktop/Strona_rekrutacyjna/static/image/marker.png"
   });
 
 }

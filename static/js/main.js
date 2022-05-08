@@ -7,7 +7,7 @@ const rightArrow = document.querySelector('header .fa-arrow-right');
 
 const slideList = [{
   text1: 'Będziesz uczyć się z ciekawością.',
-  text2: 'Obiecujemy'
+  text2: 'Obiecujemy',
 },
 {
   text1: 'Jesteśmy najlepszą uczelnią',
@@ -15,7 +15,7 @@ const slideList = [{
 },
 {
   text1: 'U nas spełnisz swoje',
-  text2: 'Marzenia.'
+  text2: 'Marzenia.',
 }]
 
 let active = 0;
@@ -65,5 +65,22 @@ const manualSlideRight = () => {
   blueH1.textContent = slideList[active].text2;
 }
 
+const popBtn = document.querySelector('.popup-btn button');
+const modalWrap = document.querySelector('.modal-wrap');
+const popClose = document.querySelector('.hide');
+const nav = document.querySelector('nav');
+
+const popup = () => {
+  modalWrap.classList.add('active');
+  nav.classList.add('nav-hide');
+}
+
+const closePopup = () => {
+  modalWrap.classList.remove('active');
+  nav.classList.remove('nav-hide');
+}
+
 leftArrow.addEventListener('click', manualSlideLeft);
 rightArrow.addEventListener('click', manualSlideRight);
+popBtn.addEventListener('click', popup);
+popClose.addEventListener('click', closePopup);
