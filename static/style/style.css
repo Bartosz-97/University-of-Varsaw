@@ -450,10 +450,10 @@ address {
   width: 200px;
 }
 
-@media (min-width: 320px) and (min-height: 480px) and (max-width: 374px){
+@media (min-width: 320px) and (max-width: 374px){
   nav {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
   }
 
   .desktop-menu {
@@ -464,7 +464,7 @@ address {
     width: 30px;
     height: 25px;
   }
-  
+
   .burger span {
     height: 4px;
   }
@@ -482,6 +482,10 @@ address {
     bottom: 0;
   }
 
+  .burger.change {
+    left: 130px;
+  }
+
   aside ul.menu li a {
     font-size: 17px;
   }
@@ -492,11 +496,11 @@ address {
 
   .logo {
     width: 85px;
-    margin-right: 15px;
+    margin-right: 25px;
   }
 
   header {
-    bottom: 10px;
+    bottom: 100px;
   }
 
   header h1 {
