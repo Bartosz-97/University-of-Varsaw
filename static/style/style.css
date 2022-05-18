@@ -117,6 +117,10 @@ aside ul.menu li:hover a {
   font-size: 27px;
 }
 
+.desktop-menu {
+  display: none;
+}
+
 .logo {
   width: 125px;
   height: 10vh;
@@ -146,7 +150,7 @@ aside ul.menu li:hover a {
   background-position: center;
   background-size: cover;
   background-blend-mode: darken;
-  background-color: rgb(0, 0 ,0 , 0.3);
+  background-color: rgb(0, 0 ,0 , 0.45);
   z-index: -2;
 }
 
@@ -181,7 +185,6 @@ header .fa-arrow-left {
 
 header .buttons {
   margin: 25px 0 0;
-
 }
 
 header .buttons button {
@@ -214,6 +217,7 @@ header .buttons button:hover::after {
 
 header .buttons button:hover {
   color: #FFF;
+  cursor: pointer;
   font-weight: 600;
 }
 
@@ -232,6 +236,9 @@ header .buttons button:hover {
 article {
   margin-top: 60px;
   width: 92%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 h2 { 
@@ -249,6 +256,7 @@ article p {
 
 article img {
   width: 100%;
+  box-shadow: 0px 0px 30px 3px #999;
 }
 
 .banner-img {
@@ -273,7 +281,7 @@ h4 {
 }
 
 .popup-btn img {
-  height: 50vh;
+  height: 100%;
 }
 
 .popup-btn button {
@@ -352,6 +360,7 @@ section {
   align-items: center;
   justify-content: center;
   background-color: #F5F8FA;
+  width: 100%;
   margin-top: 30px;
   padding: 70px 0;
 }
@@ -422,7 +431,6 @@ footer {
   align-items: center;
   background-color: #001927;
   font-family: Muli;
-  width: 100vw;
   color: #FFF;
   padding: 82px 0 0;
 }
@@ -440,4 +448,723 @@ address {
   border-radius: 100px;
   height: 200px;
   width: 200px;
+}
+
+@media (min-width: 320px) and (min-height: 480px) and (max-width: 374px){
+  nav {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .desktop-menu {
+    display: none;
+  }
+
+  nav .burger  {
+    width: 30px;
+    height: 25px;
+  }
+  
+  .burger span {
+    height: 4px;
+  }
+
+  .burger span:nth-child(1){
+    top: 0;
+    left: 0;
+  }
+  
+  .burger span:nth-child(2){
+    top: calc(50% - 2px);
+  }
+  
+  .burger span:nth-child(3){
+    bottom: 0;
+  }
+
+  aside ul.menu li a {
+    font-size: 17px;
+  }
+
+  aside ul.menu li:hover a {
+    font-size: 22px;
+  }
+
+  .logo {
+    width: 85px;
+    margin-right: 15px;
+  }
+
+  header {
+    bottom: 10px;
+  }
+
+  header h1 {
+    font-size: 28px;
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  header .fas {
+    font-size: 22px;
+  }
+
+  header .buttons {
+    display: flex;
+    margin-top: 15px;
+  }
+  
+  header .buttons button {
+    padding: 10px 10px;
+    font-size: 13px;
+  }
+
+  footer {
+    display: flex;
+    flex-direction: column;
+  }
+
+  address {
+    font-size: 17px;
+    width: 150px;
+    margin-bottom: 20px;
+  }
+
+  #map {
+    width: 170px;
+    height: 170px;
+    padding: 10px 0;
+  }
+}
+
+@media (orientation: landscape) {
+  nav {
+    height: 20vh;
+    justify-content: space-between;
+  }
+
+  .mobile-menu {
+    display: block;
+  }
+
+  .desktop-menu {
+    display: none;
+  }
+  nav .burger  {
+    width: 35px;
+    height: 25px;
+    margin-left: 55px;
+  }
+  
+  .burger span {
+    height: 3px;
+  }
+
+  .burger span:nth-child(1){
+    top: 0;
+    left: 0;
+  }
+  
+  .burger span:nth-child(2){
+    top: calc(50% - 1.5px);
+  }
+  
+  .burger span:nth-child(3){
+    bottom: 0;
+  }
+
+  .burger.change {
+    left: 135px;
+  }
+
+  aside {
+    left: -250px;
+    width: 250px;
+  }
+
+  aside ul.menu li a {
+    font-size: 15px;
+    line-height: calc(80vh / 5);
+  }
+
+  aside ul.menu li:hover a {
+    font-size: 20px;
+  }
+
+  aside ul.menu {
+    list-style-type: none;
+    margin-top: 20vh;
+    text-align: center;
+  }
+
+  .logo {
+    width: 130px;
+  }
+
+  header {
+    bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  header h1 {
+    display: flex;
+    justify-content: center;
+    font-size: 30px;
+    width: 100vw;
+    margin: 0;
+  }
+
+  header .fas {
+    font-size: 25px;
+    margin: 0 10px;
+  }
+
+  article {
+    text-align: center;
+    min-height: 100vh;
+  }
+
+  h2 {
+    margin: 20px 0;
+  }
+
+  article img,
+  .popup-btn img {
+    text-align: center;
+    width: 50vw;
+    height: 80vh;
+  }
+
+  .banner-img {
+    width: 54%;
+    margin: 0 auto;
+    box-shadow: 0px 0px 30px 3px #999;
+  }
+}
+
+@media (orientation: landscape) and (min-height: 720px) and (max-height: 920px) {
+  nav {
+    height: 15vh;
+  }
+ 
+  .desktop-menu {
+    display: none;
+  }
+
+  .mobile-menu {
+    display: block;
+  }
+
+  nav .burger  {
+    width: 55px;
+    height: 45px;
+    margin-left: 55px;
+  }
+  
+  .burger span {
+    height: 4px;
+  }
+
+  .burger span:nth-child(1){
+    top: 0;
+    left: 0;
+  }
+  
+  .burger span:nth-child(2){
+    top: calc(50% - 2px);
+  }
+  
+  .burger span:nth-child(3){
+    bottom: 0;
+  }
+
+  .burger.change {
+    left: 10px;
+  }
+
+  aside {
+    left: -300px;
+    width: 300px;
+  }
+
+  aside ul.menu li a {
+    font-size: 27px;
+    line-height: calc(80vh / 5);
+  }
+
+  aside ul.menu li:hover a {
+    font-size: 33px;
+  }
+
+  aside ul.menu {
+    list-style-type: none;
+    margin-top: 15vh;
+    text-align: center;
+  }
+
+  .logo {
+    width: 170px;
+  }
+
+  header h1 {
+    display: flex;
+    justify-content: center;
+    font-size: 55px;
+    width: 100vw;
+    margin: 0;
+  }
+
+  header .fas {
+    font-size: 35px;
+    margin: 0 10px;
+  }
+
+  .banner header .buttons {
+    display: flex;
+    justify-content: center;
+    margin: 30px 0 60px;
+  }
+  
+  header .buttons button {
+    padding: 20px 30px;
+    margin: 30px;
+    font-size: 25px;
+  }
+
+  article p {
+    font-size: 25px;
+  }
+
+  address {
+    font-size: 25px;
+    width: 200px;
+    margin-bottom: 20px;
+  }
+
+  #map {
+    width: 210px;
+    height: 200px;
+    padding: 10px 0;
+  }
+
+  p.statue {
+    font-size: 17px;
+  }
+
+  .btn-submit {
+    margin: 30px 0;
+    background-color: #00b6dc;
+    color: #FFF;
+    width: 118px;
+    height: 50px;
+    font-family: Muli;
+    border: none;
+    border-radius: 30px;
+  }
+}
+
+@media (min-width: 1000px) and (max-width: 1300px){
+  nav {
+    height: 15vh;
+    justify-content: space-around;
+  }
+
+  .mobile-menu {
+    display: none;
+  }
+
+  .fix-menu {
+    display: flex;
+    justify-content: center;
+    background-color: #000;
+    height: 10vh;
+  }
+
+  .desktop-menu {
+    display: flex;
+    justify-content: space-evenly;
+    flex-basis: 900px;
+    list-style-type: none;
+  }
+
+  .desktop-menu li {
+    width: 160px;
+    height: 40px;
+  }
+
+  .desktop-menu li a {
+    display: block;
+    height: 100%;
+    line-height: 40px;
+    font-size: 18px;
+    color: #FFF;
+    text-align: center;
+    text-decoration: none;
+    /* background-color: orange; */
+    transition: .5s;
+  }
+
+  .desktop-menu li:hover a {
+    text-transform: uppercase;
+    font-size: 22px;
+  }
+
+  nav .burger {
+    width: 50px;
+    height: 35px;
+  }
+
+  .burger span {
+    height: 3px;
+  }
+
+  .burger span:nth-child(2){
+    top: calc(50% - 1.5px);
+  }
+
+  aside {
+    left: -350px;
+    width: 350px;
+  }
+
+  aside ul.menu {
+    margin-top: 15vh;
+  }
+  
+  aside ul.menu li a {
+    display: block;
+    color: #FFF;
+    text-decoration: none;
+    font-size: 26px;
+    line-height: calc(85vh / 5);
+  }
+
+  aside ul.menu li:hover a {
+    font-size: 32px;
+  }
+
+  .logo {
+    width: 170px;
+    margin: 15px 30px 0 0;
+  }
+
+  header {
+    position: absolute;
+    top: 50%;
+  }
+
+  header h1 {
+    display: flex;
+    justify-content: flex-start;
+    font-size: 45px;
+    width: 100vw;
+    margin-left: 55px;
+  }
+
+  header .fas {
+    font-size: 35px;
+    margin: 20px 15px;
+  }
+
+  .manual-slider {
+    display: flex;
+    justify-content: flex-start;
+    width: 90%;
+  }
+
+  .buttons {
+    display: flex;
+    justify-content: flex-start;
+    width: 90%;
+  }
+
+  header .buttons button {
+    font-size: 18px;
+    padding: 15px 20px;
+    margin-right: 25px;
+  }
+
+  article {
+    min-height: 100vh;
+    width: 100vw;
+  }
+
+  .align-horizontal {
+    display: flex;
+    justify-content: space-around;
+    width: 95vw;
+  } 
+
+  .banner-img {
+    display: flex;
+    width: 52%;
+    margin: 0;
+    box-shadow: 0px 0px 30px 3px #999;
+  }
+
+  .banner-img h4 {
+    top: 30px;
+    padding: 25px 150px;
+    left: -70px;
+    font-size: 25px;
+  }
+
+  h2 {
+    font-size: 45px;
+    margin: 20px 0 60px;
+  }
+
+  article .align-horizontal .display-block p {
+    font-size: 25px;
+    line-height: 32px;
+    width: 95%;
+  }
+
+  .width-text {
+    width: 50%;
+  }
+
+  .popup-btn button {
+    font-size: 120px;
+  }
+
+  section h2 {
+    font-size: 30px;
+  }
+
+  section h3 {
+    font-size: 27px;
+  }
+
+  form > input,
+  form .row-form input {
+    padding: 30px;
+    font-size: 23px;
+  }
+
+  textarea {
+    font-size: 23px;
+  }
+
+  p.statue {
+    font-size: 18px;
+    width: 82vw;
+  }
+
+  .btn-submit {
+    width: 150px;
+    height: 70px;
+    font-size: 22px;
+  }
+
+    #map {
+    width: 210px;
+    height: 200px;
+    padding: 10px 0;
+  }
+
+  footer {
+    background-color: #001927;
+    font-family: Muli;
+    width: 100%;
+    color: #FFF;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 82px 0 0;
+  }
+  
+  address {
+    display: flex;
+    flex-direction: column;
+    font-size: 15px;
+    width: 100px;
+  }
+   
+   footer > .footer-link > a {
+    color: #FFF;
+    line-height: 32px;
+    text-decoration: none;
+   }
+  
+   .footer-link {
+    display: flex;
+    flex-flow: column wrap;
+    height: 160px;
+    width: 891px;
+   }
+}
+
+@media (min-width: 1301px) {
+  * {
+    box-sizing: border-box;
+  }
+
+  .mobile-menu {
+    display: none;
+  }
+
+  nav {
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  .fix-menu {
+    display: flex;
+    justify-content: center;
+    background-color: #000;
+    height: 7vh;
+  }
+
+  .desktop-menu {
+    display: flex;
+    justify-content: space-evenly;
+    flex-basis: 900px;
+    list-style-type: none;
+  }
+
+  .desktop-menu li {
+    width: 160px;
+    height: 40px;
+  }
+
+  .desktop-menu li a {
+    display: block;
+    height: 100%;
+    line-height: 40px;
+    font-size: 18px;
+    color: #FFF;
+    text-align: center;
+    text-decoration: none;
+    /* background-color: orange; */
+    transition: .5s;
+  }
+
+  .desktop-menu li:hover a {
+    text-transform: uppercase;
+    font-size: 22px;
+  }
+
+  .logo {
+    margin: 0;
+    width: 130px;
+  }
+
+  header {
+    position: relative;
+    width: 75vw;
+    height: 10vh;
+    margin: 0 auto;
+  }
+
+  header h1 {
+    display: flex;
+    justify-content: flex-start;
+    font-size: 40px;
+    width: 100%;
+  }
+
+  header .fas {
+    font-size: 30px;
+  }
+
+  .manual-slider {
+    width: 100%;
+    margin: 50px 0;
+  }
+
+  header .buttons {
+    /* background-color: red; */
+    width: 100%;
+    margin: 0;
+  }
+
+  header .buttons button {
+    padding: 15px 30px;
+    font-size: 18px;
+  }
+
+  article {
+    min-height: 100vh;
+    height: 100vh;
+    margin-top: 30px;
+  }
+
+  h2 {
+    margin: 20px 0 60px;
+  }
+
+  .align-horizontal {
+    display: flex;
+    justify-content: space-around;
+    width: 75vw;
+  }
+
+  article .align-horizontal .display-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-right: 30px;
+  }
+
+  article:nth-child(2) .align-horizontal .display-block {
+    margin-left: 30px;
+    order: 2;
+  }
+  
+  .width-text {
+    width: 60%;
+  }
+
+  .banner-img img {
+    width: 100%;
+  }
+
+  .popup-btn {
+    width: 70%;
+  }
+
+  .popup-btn img {
+    width: 100%;
+  }
+
+  #map {
+    width: 210px;
+    height: 200px;
+    padding: 10px 0;
+    /* background-color: red; */
+  }
+
+  footer {
+    background-color: #001927;
+    font-family: Muli;
+    width: 100%;
+    color: #FFF;
+    height: 364px;
+    display: flex;
+    justify-content: space-around;
+    padding: 82px 0 0;
+  }
+  
+  address {
+    display: flex;
+    flex-direction: column;
+    font-size: 15px;
+    width: 100px;
+  }
+   
+   footer > .footer-link > a {
+    color: #FFF;
+    line-height: 32px;
+    text-decoration: none;
+   }
+  
+   .footer-link {
+    display: flex;
+    flex-flow: column wrap;
+    height: 160px;
+    width: 891px;
+   }
 }
